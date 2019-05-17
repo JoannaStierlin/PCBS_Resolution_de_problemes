@@ -5,29 +5,21 @@ Created on Sat Apr 27 10:24:34 2019
 @author: Joanna
 """
 from tkinter import *
-
-#exercices=[["Combien font 2+2?","4"],
-#           ["5*3 ?", "15"]]
-
-with open('exercices_evaluation_niveau.txt', 'r') as mon_fichier:
-    lignes=mon_fichier.readlines()
-    
-#print(lignes)
-exercices=[]
-for ligne in lignes:
-   ligne = ligne.replace("\n", "")
-   donnees = ligne.split('; ')
-   exercices.append(donnees)
-
+import csv
+#recuperer le fichier des exercices
+exercices = csv.reader(open('exercices_evaluation_niveau.txt'), delimiter=";")
+exercices= list(exercices)
 nbexercices=len(exercices)
-#noter à quoi correspondent les colonnes
+
+
+#noter à quoi correspondent les colonnes des reponses enregistrees
 numexo=0
 typeitem=1
 consigne=2
 corexo=3
 
 numero_exercice=0
-
+#ouvrir le fichier pour recolter les reponses
 donnees_eleve = open("donnees_eleve.txt", "w") 
 
 def continuertest(reponse):
@@ -84,37 +76,38 @@ consigne2.pack(fill=BOTH)
 cadre2 = Frame(fenetre, height=400,width=300,  borderwidth=1)
 
 Label(cadre2, 
-      text="Tu peux écrire ta réponse ici puis cocher:\n Appuie sur la touche entrée pour valider ta réponse").grid(column=0,row=2)
+      text="Tu peux écrire ta réponse ici puis cocher:\n Appuie sur la touche entrée pour valider ta réponse").grid(column=0,row=0)
 
 entree = Entry(cadre2, width=30)
 entree.bind("<Return>", continuertest)
 
 
 cadre2.grid(column=0,row=2)
-entree.grid(column=0,row=0)
+entree.grid(column=0,row=1)
 
 #troisieme cadre pour demander l'operation
 cadre3 = Frame(fenetre, height=400,width=300,  borderwidth=1)
-demanderoperation=Label(cadre3, text="Quelle operation as-tu fait dans ta tete pour trouver la reponse? \n J'ai fait :")
+demanderoperation=Label(cadre3, 
+                        text="Quelle operation as-tu fait dans ta tete pour trouver la reponse? \n J'ai fait :")
 
 CheckVar1 = StringVar()
 
-C1 = Radiobutton(cadre3, text = "Addition", variable = CheckVar1,
+addition = Radiobutton(cadre3, text = "Addition", variable = CheckVar1,
                  value="A")
-C2 = Radiobutton(cadre3, text = "Soustraction", variable = CheckVar1,
+soustraction = Radiobutton(cadre3, text = "Soustraction", variable = CheckVar1,
                  value="S")
-C3 = Radiobutton(cadre3, text = "J'ai fait autrement", variable = CheckVar1,
+autre = Radiobutton(cadre3, text = "J'ai fait autrement", variable = CheckVar1,
                  value="Autre")
-C4 = Radiobutton(cadre3, text = "Je ne sais pas", variable = CheckVar1,
+saispas = Radiobutton(cadre3, text = "Je ne sais pas", variable = CheckVar1,
                  value="N")
 
 cadre3.grid(column=0,row=3)
 demanderoperation.grid(column=0,row=0)
 
-C1.grid(column=0,row=1)
-C2.grid(column=1,row=1)
-C3.grid(column=2,row=1)
-C4.grid(column=3,row=1)
+addition.grid(column=0,row=1)
+soustraction.grid(column=1,row=1)
+autre.grid(column=2,row=1)
+saispas.grid(column=3,row=1)
 
 
 #bouton pour passer à l'étape suivante

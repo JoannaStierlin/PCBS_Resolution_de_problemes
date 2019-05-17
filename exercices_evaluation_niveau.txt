@@ -1,10 +1,10 @@
-Exercice1 ; Langage ; Demain, je vais acheter un ballon a 2 euros, une poupee a 5 euros et 4 plantes a 3 euros: combien vais-je depenser pour les jouets? ; 7
-Exercice2 ; Classique ; Maelle a 6 crayons. Elle en donne 2 a son frere. Combien a-t-elle de crayons maintenant? ; 4
-Exercice3 ; Classique ; Pierre a 5 bonbons on lui en donne encore 3. Combien Pierre a-t-il de bonbons maintenant? ; 8
-Exercice4 ; Classique ; Dans le panier il y a 22 pommes. Il y a aussi 4 oranges de moins que de pommes dans ce panier. Combien y a-t-il d'oranges dans ce panier? ; 18
-Exercice5 ; Classique ; Dans le bouquet il y a 17 roses. Dans ce bouquet, il y a aussi 4 marguerites de plus que de roses. Combien y a-t-il de marguerites dans ce bouquet? ; 21
-Exercice6 ; Incongruent ; Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ? ; 3
-Exercice7 ; Incongruent ; Myriam a 4 bonbons. Jules a 19 bonbons de plus que Myriam. Combien de bonbons Jules a-t-il? ; 23
-Exercice8 ; Incongruent ; Melanie a 5 crayons. Elle en a 2 de moins que son frere. Combien son frere a-t-il de crayons? ; 7
-Exercice9 ; Incongruent ; Mehdi a 22 euros. Lou a 18 euros de moins que Mehdi. Combien d'euros Lou a-t-elle? ; 4
-Exercice10 ; Incongruent ; Dans un bouquet il y a 10 fleurs. Le fleuriste ajoute d'autres fleurs dans le bouquet. Maintenant il y 28 fleurs dans le bouquet. Combien de fleurs le fleuriste a-t-il ajoutees? ; 18
+Exercice1;Langage;Demain, je vais acheter un ballon a 2 euros, une poupee a 5 euros et 4 plantes a 3 euros: combien vais-je depenser pour les jouets?;7
+Exercice2;Classique;Maelle a 6 crayons. Elle en donne 2 a son frere. Combien a-t-elle de crayons maintenant?;4
+Exercice3;Classique;Pierre a 5 bonbons on lui en donne encore 3. Combien Pierre a-t-il de bonbons maintenant?;8
+Exercice4;Classique;Dans le panier il y a 22 pommes. Il y a aussi 4 oranges de moins que de pommes dans ce panier. Combien y a-t-il d'oranges dans ce panier?;18
+Exercice5;Classique;Dans le bouquet il y a 17 roses. Dans ce bouquet, il y a aussi 4 marguerites de plus que de roses. Combien y a-t-il de marguerites dans ce bouquet?;21
+Exercice6;Incongruent;Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ?;3
+Exercice7;Incongruent;Myriam a 4 bonbons. Jules a 19 bonbons de plus que Myriam. Combien de bonbons Jules a-t-il?;23
+Exercice8;Incongruent;Melanie a 5 crayons. Elle en a 2 de moins que son frere. Combien son frere a-t-il de crayons?;7
+Exercice9;Incongruent;Mehdi a 22 euros. Lou a 18 euros de moins que Mehdi. Combien d'euros Lou a-t-elle?;4
+Exercice10;Incongruent;Dans un bouquet il y a 10 fleurs. Le fleuriste ajoute d'autres fleurs dans le bouquet. Maintenant il y 28 fleurs dans le bouquet. Combien de fleurs le fleuriste a-t-il ajoutees?;18
