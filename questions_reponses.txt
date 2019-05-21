@@ -1,5 +1,15 @@
 Exercice1;Langage;Demain, je vais acheter un ballon a 2 euros, une poupee a 5 euros et 4 plantes a 3 euros: combien vais-je depenser pour les jouets?;7
-Exercice2;Classique;Maelle a 6 crayons. Elle en donne 2 a son frere. Combien a-t-elle de crayons maintenant?;4
-Exercice3;Classique;Pierre a 5 bonbons on lui en donne encore 3. Combien Pierre a-t-il de bonbons maintenant?;8
-Exercice4;Incongruent;Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ?;3
-Exercice5;Incongruent;Myriam a 4 bonbons. Jules a 19 bonbons de plus que Myriam. Combien de bonbons Jules a-t-il?;23
+Exercice2;Langage;Dans un zoo, il y a 4 elephants, 2 girafes et 2 lions. Il y a plus de lions que de girafes (FAUX=0,VRAI=1);0
+Exercice3;Langage;Dans un zoo, il y a 4 elephants, 2 girafes et 2 lions. Il y a plus d'elephants que de girafes (FAUX=0,VRAI=1);1
+Exercice4;Langage;Dans un zoo, il y a 4 loutres, 2 marmottes et 2 serpents. Il y a moins de loutres que de marmottes (FAUX=0,VRAI=1);0
+Exercice5;Langage;A la recreation, il y a 6 balllons et 4 trotinettes. Il y a 2 ballons de plus que de trotinettes (FAUX=0,VRAI=1);1
+Exercice6;Classique;Maelle a 6 crayons. Elle en donne 2 a son frere. Combien a-t-elle de crayons maintenant?;4
+Exercice7;Classique;Pierre a 5 bonbons on lui en donne encore 3. Combien Pierre a-t-il de bonbons maintenant?;8
+Exercice8;Classique;Dans le panier il y a 22 pommes. Il y a aussi 4 oranges de moins que de pommes dans ce panier. Combien y a-t-il d'oranges dans ce panier?;18
+Exercice9;Classique;Dans le bouquet il y a 17 roses. Dans ce bouquet, il y a aussi 4 marguerites de plus que de roses. Combien y a-t-il de marguerites dans ce bouquet?;21
+Exercice10;Classique;Avant la recreation, Tom avait 7 billes. Apres la recreation il en a 3 de plus. Combien Tom a-t-il de billes maintenant?;10
+Exercice11;Incongruent;Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ?;3
+Exercice12;Incongruent;Myriam a 4 bonbons. Jules a 19 bonbons de plus que Myriam. Combien de bonbons Jules a-t-il?;23
+Exercice13;Incongruent;Melanie a 5 crayons. Elle en a 2 de moins que son frere. Combien son frere a-t-il de crayons?;7
+Exercice14;Incongruent;Mehdi a 22 euros. Lou a 18 euros de moins que Mehdi. Combien d'euros Lou a-t-elle?;4
+Exercice15;Incongruent;Dans un bouquet il y a 10 fleurs. Le fleuriste ajoute d'autres fleurs dans le bouquet. Maintenant il y 28 fleurs dans le bouquet. Combien de fleurs le fleuriste a-t-il ajoutées?;18

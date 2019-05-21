@@ -19,7 +19,7 @@ typeitem=1
 consigne=2
 corexo=3
 
-#recuperation du nombre d'exercice de chaque categorie
+#recuperation du nombre d'exercices de chaque categorie
 nb_exo_par_cat=[0]*4
 nb_exo_par_cat[3]=nbexercices  #total dans la derniere colonne
 
@@ -42,9 +42,19 @@ def normaliser(liste_poids):
     liste_poids[2]=liste_poids[2]/total
     
 #recuperer les poids
+with open('poids_initiaux.txt', 'r') as mon_fichier:
+    poids_str=mon_fichier.read()
 
-poids=[20,30,50]
+poids_str = poids_str.split('\t')
+print(poids_str)
+poids=[]
+for nombres in range(len(poids_str)-1):
+    poids.append(float(poids_str[nombres]))
+print(poids)
+    
+#poids=[20,30,50]
 normaliser(poids)
+print(poids)
 
 def estjuste(reponse):
     global numero_exercice
@@ -53,63 +63,69 @@ def estjuste(reponse):
     if entree.get()==exercices[numero_exercice][corexo]:
         correction.configure(text="Bravo, c'est la bonne réponse!")
         numero_exercice+=1
-        #print(numero_exercice)
         
         entree.grid_forget()
-        etape_suivante.grid(column=0,row=8)
+        bouton_boite.grid_forget()
+        etape_suivante.grid(column=0,row=3)
     
     else: 
         correction.configure(text="Essaie encore, tu ne dois pas être loin!")
-        
+        correction.grid(column=0,row=2)
         print(categorie)   
         poids[categorie]+=0.1  #changer les poids a la categorie car la personne s'est trompee
         normaliser(poids)
         print(poids)
-
-def choisir_exercice(liste):
+   
+def exercicesuivant():
+    global numero_exercice
+    
+    entree.delete(0,END)
+    entree.grid(column=0,row=1)
+    etape_suivante.grid_forget()
+    correction.grid_forget()
+    
+    supprimerboite()
+    bouton_boite.grid(column=1, row=5)
+    
+    numero_exercice=choisir_exercice(poids)
+    Num_Exo.configure(text=exercices[numero_exercice][numexo])
+    consigne2.configure(text=exercices[numero_exercice][consigne])
+    
+    
+def choisir_exercice(liste_poids):
     global categorie
     numero_choisi=0
     nb_alea=random.random()
     print(categorie)
     print(nb_alea)
+    numero_debut_classique=nb_exo_par_cat[0]
     numero_debut_incongruent=nb_exo_par_cat[0]+nb_exo_par_cat[1]
-    if nb_alea <liste[0]:
-        numero_choisi=random.randint(0,nb_exo_par_cat[0]-1)
+    if nb_alea <liste_poids[0]:
+        numero_choisi=random.randint(0,numero_debut_classique-1)
         categorie=0
-    elif liste[0]<=nb_alea<liste[0]+liste[1]:
-        numero_choisi=random.randint(nb_exo_par_cat[0], numero_debut_incongruent-1)
+    elif liste_poids[0]<=nb_alea<liste_poids[0]+liste_poids[1]:
+        numero_choisi=random.randint(numero_debut_classique, numero_debut_incongruent-1)
         categorie=1
     else:
         numero_choisi=random.randint(numero_debut_incongruent,numero_debut_incongruent+nb_exo_par_cat[2]-1)
         categorie=2
     return numero_choisi
-    
-def exercicesuivant():
-    global numero_exercice
-    entree.delete(0,END)
-    entree.grid(column=0,row=1)
-    etape_suivante.grid_forget()
-    
-    supprimerboite()
-    boite.grid(column=1, row=5)
-    
-    numero_exercice=choisir_exercice(poids)
-    Num_Exo.configure(text=exercices[numero_exercice][numexo])
-    consigne2.configure(text=exercices[numero_exercice][consigne])
-    correction.configure(text=" ")
 
 def afficherboite():    
-    boite.grid_forget()
-    aideboite.grid(column=1, row=5, columnspan=3)
-    tout.grid(column=1,row=6, columnspan=3)
-    partie1.grid(column=1,row=7,  columnspan=2)
-    partie2.grid(column=2,row=7,  columnspan=2)
+    bouton_boite.grid_forget()
+    
+    aideboite.grid(column=0, row=0, columnspan=2)
+    tout.grid(column=0,row=1, columnspan=2)
+    partie1.grid(column=0,row=2,sticky='e')
+    partie2.grid(column=1,row=2,sticky='w')
     
 def supprimerboite():
+    aideboite.grid_forget()
+    
     tout.delete(0,END)
     partie1.delete(0,END)
     partie2.delete(0,END)
-    aideboite.grid_forget()
+    
     tout.grid_forget()
     partie1.grid_forget()
     partie2.grid_forget()
@@ -117,9 +133,9 @@ def supprimerboite():
  # création du widget principal
 fenetre = Tk()
 fenetre.title("Apprendre à calculer")
+fenetre.geometry("1000x600+300+0")
 
-
-Num_Exo=Label(fenetre, text="Exercice 1")
+Num_Exo=Label(fenetre, text=exercices[numero_exercice][numexo])
 Num_Exo.grid(column=0, row=0)
 
 #premier cadre pour l'énoncé
@@ -127,7 +143,7 @@ cadre1 = Frame(fenetre, height=400,width=300,  borderwidth=1, relief="groove")
 cadre1.grid(column=0,row=1)
 
 consigne1 =Label(cadre1, text="Lis bien l'énoncé:")
-consigne2 =Label(cadre1, text=exercices[numexo][consigne])
+consigne2 =Label(cadre1, text=exercices[numero_exercice][consigne])
 consigne1.pack(fill=BOTH)
 consigne2.pack(fill=BOTH)
 
@@ -146,22 +162,21 @@ cadre2.grid(column=0,row=2)
 entree.grid(column=0,row=1)
 correction.grid(column=0,row=2)
 
-#troisième cadre
+#troisième cadre pour s'aider de la boite
 cadre3=Frame(fenetre, height=400,width=300,  borderwidth=1, relief="ridge")
 aideboite=Label(cadre3, text="Aide-toi de la boîte pour faire tes calculs")
 cadre3.grid(column=0,row=3)
 
-tout=Entry(cadre3,width=20)
-partie1=Entry(cadre3,width=10)
-partie2=Entry(cadre3,width=10)
+tout=Entry(cadre3,width=14)
+partie1=Entry(cadre3,width=7)
+partie2=Entry(cadre3,width=7)
 
 #bouton pour passer à l'étape suivante
-etape_suivante=Button(fenetre, text="On continue!", command=exercicesuivant)
+etape_suivante=Button(cadre2, text="On continue!", command=exercicesuivant)
 
 #bouton pour afficher la boîte si l'élève le veut
-
-boite=Button(cadre3, text="Aide Boîte", command=afficherboite)
-boite.grid(column=1, row=5)
+bouton_boite=Button(cadre3, text="Aide Boîte", command=afficherboite)
+bouton_boite.grid(column=0, row=5)
 
 #bouton permettant de quitter
 quitter=Button(fenetre, text="Quitter", command=fenetre.destroy)
