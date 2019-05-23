@@ -27,31 +27,31 @@ Voici à quoi ressemble mon interface graphique:
 
 La fonction continuertest permet de passer à la question suivante et d'enregistrer les réponses de la question actuelle. Cette fonction est actionnée par un bouton qui se nomme etape_suivante.
 
-  etape_suivante=Button(fenetre, text="On continue!", command=exercicesuivant)
+    etape_suivante=Button(fenetre, text="On continue!", command=exercicesuivant)
 
-  def continuertest(reponse):
-      global numero_exercice
+    def continuertest(reponse):
+        global numero_exercice
 
-      reponse_question=[exercices[numero_exercice][numexo]+"\t",
-                        exercices[numero_exercice][typeitem]+"\t",
-                        exercices[numero_exercice][corexo]+"\t",
-                        entree.get()+"\t",
-                        CheckVar1.get()+"\n"]
-      donnees_eleve.writelines(reponse_question)
-      entree.delete(0,END)
-      entree.grid_forget()
-      cadre3.grid_forget()
-      numero_exercice+=1
+        reponse_question=[exercices[numero_exercice][numexo]+"\t",
+                          exercices[numero_exercice][typeitem]+"\t",
+                          exercices[numero_exercice][corexo]+"\t",
+                          entree.get()+"\t",
+                          CheckVar1.get()+"\n"]
+        donnees_eleve.writelines(reponse_question)
+        entree.delete(0,END)
+        entree.grid_forget()
+        cadre3.grid_forget()
+        numero_exercice+=1
 
 
-      if numero_exercice==nbexercices:
-          quitter.grid(column=0, row=5)
-          donnees_eleve.close()
+        if numero_exercice==nbexercices:
+            quitter.grid(column=0, row=5)
+            donnees_eleve.close()
 
-      else:
-          etape_suivante.grid(column=0,row=8)
+        else:
+            etape_suivante.grid(column=0,row=8)
 
-Il y a ensuite une deuxième question qui me permet de modifier la fenêtre graphique pour passer à l^étape suivante:
+Il y a ensuite une deuxième question qui me permet de modifier la fenêtre graphique pour passer à l'étape suivante:
 
   def exercicesuivant():
       entree.grid(column=0,row=3)
