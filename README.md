@@ -21,7 +21,7 @@ A chaque catégorie d'items est attribué un poids qui correspond à l'importanc
 
 Voici un exemple de l'application dans lequel l'élève répond après avoir utilisé la boîte:
 <figure>
-    <img src='exemple_boite.png' width="400" alt='missing' />
+    <img src='exemple_boite.PNG' width="400" alt='missing' />
 </figure>
 
 Dans les premiers et troisièmes scripts, j'utilise la libraire tkinter, qui me permet de créer une interface graphique. Le principe de cette librairie est d'utiliser des widgets placés dans des fenêtres. Lorsque l'utilisateur intéragit avec les widgets pour effectuer une action, cela enclenche les fonctions définies au début du code.
