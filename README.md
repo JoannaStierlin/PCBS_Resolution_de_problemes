@@ -14,6 +14,11 @@ J'utilise trois scripts principaux dans mon projet:
 
 * Le premier [PCBS_pretest_calcul.py](https://github.com/JoannaStierlin/PCBS_Resolution_de_problemes/blob/master/PCBS_pretest_calcul.py) est une phase de test pour évaluer les compétences de l'élève, que je sépare en trois catégories: langage, items classiques et items incongruents (c'est à dire des items pour lesquels l'énoncé verbal est incongruent- voir ci-dessus pour l'explication).
 
+Voici un exemple de l'application dans lequel l'élève répond à une question du prétest. Deux actions lui sont demandées: répondre à la question puis expliciter si possible sa stratégie.
+<figure>
+    <img src='exemple_pretest.PNG' width="600" alt='missing' />
+</figure>
+
 * Le deuxième script [PCBS_statistiques_initiales_eleve.ipynb](https://github.com/JoannaStierlin/PCBS_Resolution_de_problemes/blob/master/PCBS_statistiques_initiales_eleve.ipynb) est destiné à l'enseignant et a pour but de faire un compte rendu statistique des compétences de l'élève ainsi que des stratégies qu'il utilise. Ces statistiques peuvent être utiles à l'enseignant qui peut alors voir les domaines où l'élève a encore des progrès à faire. Il servira aussi dans le troisième script car il définit les poids de départ de chaque catégorie de questions pour la phase d'apprentissage.
 
 * Le troisième [PCBS_apprendre_a_calculer.py](https://github.com/JoannaStierlin/PCBS_Resolution_de_problemes/blob/master/PCBS_apprendre_a_calculer.py) est la phase d'apprentissage pendant laquelle l'élève s'entraine sur des problèmes. Il peut, pour s'aider, utiliser des outils comme la boite proposés par la méthode Arithmécole sur laquelle j'ai travaillé pendant mon mini-stage.
@@ -21,7 +26,7 @@ A chaque catégorie d'items est attribué un poids qui correspond à l'importanc
 
 Voici un exemple de l'application dans lequel l'élève répond après avoir utilisé la boîte:
 <figure>
-    <img src='exemple_boite.PNG' width="400" alt='missing' />
+    <img src='exemple_boite.PNG' width="600" alt='missing' />
 </figure>
 
 Dans les premiers et troisièmes scripts, j'utilise la libraire tkinter, qui me permet de créer une interface graphique. Le principe de cette librairie est d'utiliser des widgets placés dans des fenêtres. Lorsque l'utilisateur intéragit avec les widgets pour effectuer une action, cela enclenche les fonctions définies au début du code.
@@ -127,8 +132,7 @@ On utilise la fonction ci-dessous pour choisir l'exercice suivant aléatoirement
         global categorie
         numero_choisi=0
         nb_alea=random.random()
-        print(categorie)
-        print(nb_alea)
+        
         numero_debut_classique=nb_exo_par_cat[0]
         numero_debut_incongruent=nb_exo_par_cat[0]+nb_exo_par_cat[1]
         if nb_alea <liste_poids[0]:
