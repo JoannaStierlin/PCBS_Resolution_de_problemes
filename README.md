@@ -3,9 +3,19 @@
 Le but de ce projet est de proposer une application permettant à des élèves de CP/CE1 de faire des exercices pour progresser en mathématiques et plus particulièrement en résolution de problèmes. Je m'appuie pour cela sur le cadre théorique et les exercices proposés aux enfants dans le cadre de mon stage.
 
 ## Cadre théorique : Un nouvelle manière d'apprendre les mathématiques
-J'utilise ici une partie de la pédagogie que j'ai étudiée lors de mon stage. Le but est de travailler des problèmes qui demandent un recodage sémantique plus important, c'est à dire des problèmes moins intuitifs, comme des problèmes qui font apparaître les notions "De plus", "De moins" ou des problèmes de transformation. En effet, il a été montré que les mots utilisés et l'ordre des nombres présentés influencent la stratégie que va utiliser l'élève.
-Par exemple, pour des problèmes contenant les mots "De plus", les élèves ont tendance à vouloir faire une addition. Or dans un exemple comme : "Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ?", il faut faire une soustraction pour répondre correctement. Ce sont les problèmes que l'on appelle à énoncé verbal incongruent. Les deux autres catégories que j'utilise sont des problèmes à énoncé congruent (ou items classiques), et des problèmes qui visent à tester le niveau de langage et de compréhension de l'élève.
+J'utilise ici une partie de la pédagogie que j'ai étudiée lors de mon stage. Le but est de travailler des problèmes qui demandent un recodage sémantique plus important, c'est à dire des problèmes moins intuitifs qui sont dits incongruents. L'incongruence peut se manifester de plusieurs façons : l'incongruence sémantique ou l'incongruence procédurale.
+
+* L'incongruence sémantique provient du fait que la sémantique utilisé dans l'énoncé n'est pas en accord avec la représentation mathématiques et le calul à effectuer. Ce sont par exemple des problèmes qui font apparaître les notions "De plus", "De moins".Par exemple, pour des problèmes contenant les mots "De plus", les élèves ont tendance à vouloir faire une addition. Or dans un exemple comme : "Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ?", il faut faire une soustraction pour répondre correctement.
+
+* L'incongruence procédurale concerne l'efficacité de la simulation mentale et joue par exemple sur la disymétrie des termes et la commutativité de l'addition par exemple. En effet, il a été montré que les mots utilisés et l'ordre des nombres présentés influencent la stratégie que va utiliser l'élève.
+
+Tous ces problèmes sont appelés problèmes à énoncé verbal incongruent. Les deux autres catégories que j'utilise sont des problèmes à énoncé congruent (ou items classiques), et des problèmes qui visent à tester le niveau de langage et de compréhension de l'élève.
+
 Un des outils développés pour favoriser un meilleur encodage sémantique et une meilleure compréhension du problème est la boîte, en image ci dessous.
+
+<figure>
+    <img src='boite.jpg' width="600" alt='missing' />
+</figure>
 
 Elle contient trois cases: la case du dessus représentant le tout, et les deux cases du dessous les deux parties qu'il faut additionner pour obtenir le tout. Cette boîte sert à mieux identifier le problème et à pouvoir visualiser l'opération à effectuer. Elle sera proposée aux élèves lors de la phase d'entrainement.
 
@@ -132,7 +142,7 @@ On utilise la fonction ci-dessous pour choisir l'exercice suivant aléatoirement
         global categorie
         numero_choisi=0
         nb_alea=random.random()
-        
+
         numero_debut_classique=nb_exo_par_cat[0]
         numero_debut_incongruent=nb_exo_par_cat[0]+nb_exo_par_cat[1]
         if nb_alea <liste_poids[0]:
