@@ -31,6 +31,11 @@ Voici un exemple de l'application dans lequel l'élève répond à une question 
 
 * Le deuxième script [PCBS_statistiques_initiales_eleve.ipynb](https://github.com/JoannaStierlin/PCBS_Resolution_de_problemes/blob/master/PCBS_statistiques_initiales_eleve.ipynb) est destiné à l'enseignant et a pour but de faire un compte rendu statistique des compétences de l'élève ainsi que des stratégies qu'il utilise. Ces statistiques peuvent être utiles à l'enseignant qui peut alors voir les domaines où l'élève a encore des progrès à faire. Il servira aussi dans le troisième script car il définit les poids de départ de chaque catégorie de questions pour la phase d'apprentissage.
 
+Voici le genre de graphique auxquels on a accès après l'analyse des données:
+<figure>
+    <img src='Resultat_eleve'.PNG' width="600" alt='missing' />
+</figure>
+
 * Le troisième [PCBS_apprendre_a_calculer.py](https://github.com/JoannaStierlin/PCBS_Resolution_de_problemes/blob/master/PCBS_apprendre_a_calculer.py) est la phase d'apprentissage pendant laquelle l'élève s'entraine sur des problèmes. Il peut, pour s'aider, utiliser des outils comme la boite proposés par la méthode Arithmécole sur laquelle j'ai travaillé pendant mon mini-stage.
 A chaque catégorie d'items est attribué un poids qui correspond à l'importance de la catégorie dans les questions proposées. Plus le poids est grand, et plus l'élève doit travailler cette catégorie. C'est une tâche d'apprentissage adaptative donc les poids se modifient en fonction des réponses de l'élève.
 
@@ -106,7 +111,6 @@ Il y a ensuite une fonction de test qui permet de corriger la réponse de l'él�
 
         if entree.get()==exercices[numero_exercice][corexo]:
             correction.configure(text="Bravo, c'est la bonne réponse!")
-            numero_exercice+=1
 
             entree.grid_forget()
             bouton_boite.grid_forget()
@@ -179,15 +183,17 @@ Enfin, les deux dernières fonctions me permetttent de gérer l'affichage et la 
 
 Comme dans le premier script, la fin du programme sert à programmer l'affichage de la fenêtre et de tous les widgets qu'il contient.
 
-### Les limites et améliorations possibles
-J'aurais pu aller plus loin dans la phase d'entrainement et demander aux élèves le calcul qu'ils on effectué pour obtenir leur résultat. En effet, la stratégie utilisée nous en apprend plus sur la compréhension et la modélisation du problème par l'élève que le résultat du calcul, qui peut contenir des erreurs. Le but de cette méthode est avant tout d'améliorer la compréhension des élèves et leur capacités de simulation mentale et non d'améliorer le capacités calculatoires. De même. j'aurais pu ajouter une fonction qui renvoie des feedbacks sur l'utilisation de la boite.
-Je n'ai qu'un nombre restreint de questions, il faudrait proposer plus de problèmes analogues. Dans l'idéal, le programme devrait s'arrêter lorsque les poids restent stationnaires, c'est à dire lorsque l'élève ne fait plus d'erreurs (parce qu'il a compris et non parce qu'il connait les exercices par coeur!).
 
 ## Conclusion
 Ces programmes pourraient être utiles à la méthode Arithmécole pour plusieurs raisons.
 
-Premièrement, la phase de test aurait permis de tester la méthode Arithmécole et de récolter les données de chaque élève dans un fichier, ce qui est un avantage non négligeable car j'ai passé une partie de mon temps à coder les données de test lors de mon stage. Cependant pour ce type de tâche, faire un test sur l'ordinateur ou sur papier peut donner des résultats différents, car les élèves passaient souvent aussi par des dessins pour modéliser les problèmes. Réfléchir devant un oridnateur ou devant une feuille est un petit peu différent.
+Premièrement, la phase de test aurait permis de tester la méthode Arithmécole et de récolter les données de chaque élève dans un fichier, ce qui est un avantage non négligeable car j'ai passé une partie de mon temps à coder les données de test lors de mon stage. Cependant pour ce type de tâche, faire un test sur ordinateur ou sur papier peut donner des résultats différents, car les élèves passaient souvent aussi par des dessins pour modéliser les problèmes. Réfléchir devant un oridnateur ou devant une feuille est un petit peu différent.
 
-De plus, la phase d'analyse des résultats permettrait d'avoir un suivi individualisé de l'élève et de savoir où il en est dans ses apprentissages.
+De plus, la phase d'analyse des résultats permettrait d'avoir un suivi précis et individualisé de l'élève et de savoir où il en est dans ses apprentissages.
 
 Enfin, la phase d'entrainement pourrait être utile pour faire travailler les élèves en fonction de leurs besoins, tout en leur proposant les aides introduites par la méthode Arithmécole.
+
+### Les limites et améliorations possibles
+J'aurais pu aller plus loin dans la phase d'entrainement et demander aux élèves le calcul qu'ils on effectué pour obtenir leur résultat. En effet, la stratégie utilisée nous en apprend plus sur la compréhension et la modélisation du problème par l'élève que le résultat du calcul, qui peut contenir des erreurs. Le but de cette méthode est avant tout d'améliorer la compréhension des élèves et leurs capacités de simulation mentale et non d'améliorer les capacités calculatoires. De même, j'aurais pu ajouter une fonction qui renvoie des feedbacks sur l'utilisation de la boite.
+
+Je n'ai qu'un nombre restreint de questions, il faudrait proposer plus de problèmes analogues. Dans l'idéal, le programme devrait s'arrêter lorsque les poids restent stationnaires, c'est à dire lorsque l'élève ne fait plus d'erreurs (parce qu'il a compris et non parce qu'il connait les exercices par coeur!).

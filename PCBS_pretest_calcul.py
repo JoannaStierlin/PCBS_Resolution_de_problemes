@@ -29,7 +29,7 @@ def continuertest(reponse):
                       exercices[numero_exercice][typeitem]+"\t",
                       exercices[numero_exercice][corexo]+"\t",
                       entree.get()+"\t",
-                      CheckVar1.get()+"\n"]
+                      strategie.get()+"\n"]
     donnees_eleve.writelines(reponse_question)
     entree.delete(0,END)
     entree.grid_forget()
@@ -88,21 +88,21 @@ entree.grid(column=0,row=1)
 #troisieme cadre pour demander l'operation
 cadre3 = Frame(fenetre, height=400,width=300,  borderwidth=1)
 demanderoperation=Label(cadre3, 
-                        text="Quelle operation as-tu fait dans ta tete pour trouver la reponse? \n J'ai fait :")
+                        text="Quelle opération as-tu fait dans ta tête pour trouver la réponse? \n J'ai fait :")
 
-CheckVar1 = StringVar()
+strategie = StringVar()
 
-addition = Radiobutton(cadre3, text = "Addition", variable = CheckVar1,
+addition = Radiobutton(cadre3, text = "Addition", variable = strategie,
                  value="A")
-soustraction = Radiobutton(cadre3, text = "Soustraction", variable = CheckVar1,
+soustraction = Radiobutton(cadre3, text = "Soustraction", variable = strategie,
                  value="S")
-autre = Radiobutton(cadre3, text = "J'ai fait autrement", variable = CheckVar1,
+autre = Radiobutton(cadre3, text = "J'ai fait autrement", variable = strategie,
                  value="Autre")
-saispas = Radiobutton(cadre3, text = "Je ne sais pas", variable = CheckVar1,
+saispas = Radiobutton(cadre3, text = "Je ne sais pas", variable = strategie,
                  value="N")
 
 cadre3.grid(column=0,row=3)
-demanderoperation.grid(column=0,row=0)
+demanderoperation.grid(column=0,row=0, columnspan=4)
 
 addition.grid(column=0,row=1)
 soustraction.grid(column=1,row=1)

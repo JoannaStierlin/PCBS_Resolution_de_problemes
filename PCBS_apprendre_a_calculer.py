@@ -46,13 +46,11 @@ with open('poids_initiaux.txt', 'r') as mon_fichier:
     poids_str=mon_fichier.read()
 
 poids_str = poids_str.split('\t')
-print(poids_str)
+
 poids=[]
 for nombres in range(len(poids_str)-1):
     poids.append(float(poids_str[nombres]))
-print(poids)
-    
-#poids=[20,30,50]
+
 normaliser(poids)
 print(poids)
 
@@ -62,8 +60,7 @@ def estjuste(reponse):
     
     if entree.get()==exercices[numero_exercice][corexo]:
         correction.configure(text="Bravo, c'est la bonne réponse!")
-        numero_exercice+=1
-        
+                
         entree.grid_forget()
         bouton_boite.grid_forget()
         etape_suivante.grid(column=0,row=3)
@@ -71,10 +68,10 @@ def estjuste(reponse):
     else: 
         correction.configure(text="Essaie encore, tu ne dois pas être loin!")
         correction.grid(column=0,row=2)
-        print(categorie)   
+          
         poids[categorie]+=0.1  #changer les poids a la categorie car la personne s'est trompee
         normaliser(poids)
-        print(poids)
+        
    
 def exercicesuivant():
     global numero_exercice
@@ -96,8 +93,7 @@ def choisir_exercice(liste_poids):
     global categorie
     numero_choisi=0
     nb_alea=random.random()
-    print(categorie)
-    print(nb_alea)
+    
     numero_debut_classique=nb_exo_par_cat[0]
     numero_debut_incongruent=nb_exo_par_cat[0]+nb_exo_par_cat[1]
     if nb_alea <liste_poids[0]:

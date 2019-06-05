@@ -1,0 +1,10 @@
+Exercice1	Langage	7	7	A
+Exercice2	Classique	4	4	S
+Exercice3	Classique	8	8	A
+Exercice4	Classique	18	19	S
+Exercice5	Classique	21	23	N
+Exercice6	Incongruent	3	7	A
+Exercice7	Incongruent	23	23	A
+Exercice8	Incongruent	7	7	Autre
+Exercice9	Incongruent	4	4	N
+Exercice10	Incongruent	18	18	Autre
