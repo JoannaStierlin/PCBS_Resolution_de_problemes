@@ -33,7 +33,7 @@ Voici un exemple de l'application dans lequel l'élève répond à une question 
 
 Voici le genre de graphique auxquels on a accès après l'analyse des données:
 <figure>
-    <img src='Resultat_eleve'.PNG' width="600" alt='missing' />
+    <img src='Resultat_eleve.png' width="600" alt='missing' />
 </figure>
 
 * Le troisième [PCBS_apprendre_a_calculer.py](https://github.com/JoannaStierlin/PCBS_Resolution_de_problemes/blob/master/PCBS_apprendre_a_calculer.py) est la phase d'apprentissage pendant laquelle l'élève s'entraine sur des problèmes. Il peut, pour s'aider, utiliser des outils comme la boite proposés par la méthode Arithmécole sur laquelle j'ai travaillé pendant mon mini-stage.
