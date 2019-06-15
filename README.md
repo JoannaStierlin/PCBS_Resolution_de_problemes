@@ -3,9 +3,9 @@
 Le but de ce projet est de proposer une application permettant à des élèves de CP/CE1 de faire des exercices pour progresser en mathématiques et plus particulièrement en résolution de problèmes. Je m'appuie pour cela sur le cadre théorique et les exercices proposés aux enfants dans le cadre de mon stage.
 
 ## Cadre théorique : Un nouvelle manière d'apprendre les mathématiques
-J'utilise ici une partie de la pédagogie que j'ai étudiée lors de mon stage. Le but est de travailler des problèmes qui demandent un recodage sémantique plus important, c'est à dire des problèmes moins intuitifs qui sont dits incongruents. L'incongruence peut se manifester de plusieurs façons : l'incongruence sémantique ou l'incongruence procédurale.
+J'utilise ici une partie de la pédagogie que j'ai étudiée lors de mon stage. Le but est de travailler des problèmes qui demandent un recodage sémantique plus important, c'est à dire des problèmes moins intuitifs qui sont dits incongruents. L'incongruence peut se manifester de plusieurs façons : l'incongruence avec les analogies naïves ou l'incongruence procédurale (il en existe d'autres types dont on ne parlera pas ici).
 
-* L'incongruence sémantique provient du fait que la sémantique utilisé dans l'énoncé n'est pas en accord avec la représentation mathématiques et le calul à effectuer. Ce sont par exemple des problèmes qui font apparaître les notions "De plus", "De moins".Par exemple, pour des problèmes contenant les mots "De plus", les élèves ont tendance à vouloir faire une addition. Or dans un exemple comme : "Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ?", il faut faire une soustraction pour répondre correctement.
+* L'incongruence avec les analogies naïves provient du fait que la sémantique utiliseé dans l'énoncé ou le contexte du problème ne sont pas en accord avec la représentation mathématiques et le calul à effectuer. Ce sont par exemple des problèmes qui font apparaître les notions "De plus", "De moins". Par exemple, pour des problèmes contenant les mots "De plus", les élèves ont tendance à vouloir faire une addition. Or dans un exemple comme : "Lilou a 5 billes. Elle en a 2 de plus que sa soeur. Combien sa soeur a-t-elle de billes ?", il faut faire une soustraction pour répondre correctement.
 
 * L'incongruence procédurale concerne l'efficacité de la simulation mentale et joue par exemple sur la disymétrie des termes et la commutativité de l'addition par exemple. En effet, il a été montré que les mots utilisés et l'ordre des nombres présentés influencent la stratégie que va utiliser l'élève.
 
@@ -17,7 +17,7 @@ Un des outils développés pour favoriser un meilleur encodage sémantique et un
     <img src='boite.jpg' width="600" alt='missing' />
 </figure>
 
-Elle contient trois cases: la case du dessus représentant le tout, et les deux cases du dessous les deux parties qu'il faut additionner pour obtenir le tout. Cette boîte sert à mieux identifier le problème et à pouvoir visualiser l'opération à effectuer. Elle sera proposée aux élèves lors de la phase d'entrainement.
+Elle contient trois cases: la case du dessus représentant le tout, et les deux cases du dessous les deux parties qu'il faut additionner pour obtenir le tout. Cette boîte sert à mieux identifier le problème et à pouvoir visualiser l'opération à effectuer en favorisant une abstraction plus profonde. Elle sera proposée aux élèves lors de la phase d'entrainement.
 
 ## Programmation de l'application
 J'utilise trois scripts principaux dans mon projet:
@@ -48,7 +48,6 @@ Dans les premiers et troisièmes scripts, j'utilise la libraire tkinter, qui me 
 
 ### Phase de test
 Je présente dans cette partie les fonctions importantes du programme [PCBS_pretest_calcul.py](https://github.com/JoannaStierlin/PCBS_Resolution_de_problemes/blob/master/PCBS_pretest_calcul.py). Dans cette application, l'élève répond et ses réponses sont enregistrées. On enregistre pour chaque question le numéro de l'exercice, le type d'item (Langage, Classique ou Incongruent), la correction de l'exercice (donnée par le fichier d'entrée), la réponse de l'élève et la stratégie qu'il utilise. Il n'obtient pas de feedback sur ce qu'il répond, le but étant juste de tester son niveau.
-Voici à quoi ressemble mon interface graphique:
 
 
 La fonction continuertest permet de passer à la question suivante et d'enregistrer les réponses de la question actuelle.
@@ -194,6 +193,6 @@ De plus, la phase d'analyse des résultats permettrait d'avoir un suivi précis 
 Enfin, la phase d'entrainement pourrait être utile pour faire travailler les élèves en fonction de leurs besoins, tout en leur proposant les aides introduites par la méthode Arithmécole.
 
 ### Les limites et améliorations possibles
-J'aurais pu aller plus loin dans la phase d'entrainement et demander aux élèves le calcul qu'ils on effectué pour obtenir leur résultat. En effet, la stratégie utilisée nous en apprend plus sur la compréhension et la modélisation du problème par l'élève que le résultat du calcul, qui peut contenir des erreurs. Le but de cette méthode est avant tout d'améliorer la compréhension des élèves et leurs capacités de simulation mentale et non d'améliorer les capacités calculatoires. De même, j'aurais pu ajouter une fonction qui renvoie des feedbacks sur l'utilisation de la boite.
+J'aurais pu aller plus loin dans la phase d'entrainement et demander aux élèves le calcul qu'ils on effectué pour obtenir leur résultat. En effet, la stratégie utilisée nous en apprend plus sur la compréhension et la modélisation du problème par l'élève que le résultat du calcul, qui peut contenir des erreurs. Le but de cette méthode est avant tout d'améliorer la compréhension des élèves et leurs capacités de simulation mentale et moins d'améliorer les capacités calculatoires. De même, j'aurais pu ajouter une fonction qui renvoie des feedbacks sur l'utilisation de la boîte.
 
 Je n'ai qu'un nombre restreint de questions, il faudrait proposer plus de problèmes analogues. Dans l'idéal, le programme devrait s'arrêter lorsque les poids restent stationnaires, c'est à dire lorsque l'élève ne fait plus d'erreurs (parce qu'il a compris et non parce qu'il connait les exercices par coeur!).
